@@ -10,3 +10,8 @@ RUN apt-get update && \
 # install google chrome with virtual frame
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -q && \
     gdebi google-chrome-stable_current_amd64.deb -n
+
+# install python + pip
+RUN apt-get install -y \
+    python3.7 \
+    python3-pip
