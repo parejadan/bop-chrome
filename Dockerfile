@@ -6,3 +6,7 @@ RUN apt-get update && \
     gdebi-core \
     wget \
     xvfb
+
+# install google chrome with virtual frame
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -q && \
+    gdebi google-chrome-stable_current_amd64.deb -n
