@@ -21,3 +21,4 @@ RUN apt-get install -y \
     nodejs \
     npm
 RUN npm install -g @vue/cli
+RUN /bin/sh -c hash -d npm
