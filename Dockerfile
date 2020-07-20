@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:19.10
 
 # get chrome virtual GUI frame dependencies
 RUN apt-get update && \
@@ -17,8 +17,8 @@ RUN apt-get install -y \
     python3-pip
 
 # install node + npm
-RUN apt-get install -y \
-    nodejs \
-    npm
-RUN npm install -g @vue/cli
-RUN /bin/sh -c hash -d npm
+#RUN apt-get install -y \
+#    nodejs \
+#    npm
+#RUN npm install -g @vue/cli
+#RUN /bin/sh -c hash -d npm
