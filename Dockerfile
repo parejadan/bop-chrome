@@ -1,4 +1,4 @@
-FROM ubuntu:19.10
+FROM ubuntu:20.04
 
 # get chrome virtual GUI frame dependencies
 RUN apt-get update && \
@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 # install google chrome with virtual frame
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -q && \
-    gdebi google-chrome-stable_current_amd64.deb -n
+    DEBIAN_FRONTEND="noninteractive" gdebi google-chrome-stable_current_amd64.deb -n
 
 # install python + pip
 RUN apt-get install -y \
@@ -17,8 +17,8 @@ RUN apt-get install -y \
     python3-pip
 
 # install node + npm
-#RUN apt-get install -y \
-#    nodejs \
-#    npm
-#RUN npm install -g @vue/cli
-#RUN /bin/sh -c hash -d npm
+RUN apt-get install -y \
+    nodejs \
+    npm
+RUN npm install -g @vue/cli
+RUN /bin/sh -c hash -d npm
